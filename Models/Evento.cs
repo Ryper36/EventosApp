@@ -102,11 +102,8 @@ namespace EventosApp.Models
         {
             get
             {
-                if (DataTermino >= DataInicio)
-                {
-                    return (DataTermino - DataInicio).Days;
-                }
-                return 0;
+                TimeSpan diferenca = DataTermino - DataInicio;
+                return diferenca.Days;
             }
         }
 
