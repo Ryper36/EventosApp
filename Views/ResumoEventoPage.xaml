@@ -1,0 +1,47 @@
+
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:models="clr-namespace:EventosApp.Models"
+             x:Class="EventosApp.Views.ResumoEventoPage"
+             Title="Resumo do Evento">
+
+    <ContentPage.Content>
+        <ScrollView>
+            <VerticalStackLayout
+                Spacing="10"
+                Padding="20"
+                VerticalOptions="StartAndExpand">
+
+                <Label Text="Resumo do Evento" FontSize="Title" HorizontalOptions="Center" />
+
+                <Grid ColumnDefinitions="Auto,*" RowDefinitions="Auto,Auto,Auto,Auto,Auto,Auto,Auto,Auto">
+                    <Label Grid.Row="0" Grid.Column="0" Text="Nome:" FontAttributes="Bold" />
+                    <Label Grid.Row="0" Grid.Column="1" Text="{Binding Nome}" />
+
+                    <Label Grid.Row="1" Grid.Column="0" Text="Data de Início:" FontAttributes="Bold" />
+                    <Label Grid.Row="1" Grid.Column="1" Text="{Binding DataInicio, StringFormat='{0:dd/MM/yyyy}'}" />
+
+                    <Label Grid.Row="2" Grid.Column="0" Text="Data de Término:" FontAttributes="Bold" />
+                    <Label Grid.Row="2" Grid.Column="1" Text="{Binding DataTermino, StringFormat='{0:dd/MM/yyyy}'}" />
+
+                    <Label Grid.Row="3" Grid.Column="0" Text="Duração:" FontAttributes="Bold" />
+                    <Label Grid.Row="3" Grid.Column="1" Text="{Binding DuracaoEmDias, StringFormat='{0} dias'}" />
+
+                    <Label Grid.Row="4" Grid.Column="0" Text="Participantes:" FontAttributes="Bold" />
+                    <Label Grid.Row="4" Grid.Column="1" Text="{Binding NumeroParticipantes}" />
+
+                    <Label Grid.Row="5" Grid.Column="0" Text="Local:" FontAttributes="Bold" />
+                    <Label Grid.Row="5" Grid.Column="1" Text="{Binding Local}" />
+
+                    <Label Grid.Row="6" Grid.Column="0" Text="Custo por Participante:" FontAttributes="Bold" />
+                    <Label Grid.Row="6" Grid.Column="1" Text="{Binding CustoPorParticipante, StringFormat='{0:C}'}" />
+
+                    <Label Grid.Row="7" Grid.Column="0" Text="Custo Total:" FontAttributes="Bold" />
+                    <Label Grid.Row="7" Grid.Column="1" Text="{Binding CustoTotal, StringFormat='{0:C}'}" />
+                </Grid>
+
+            </VerticalStackLayout>
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>
